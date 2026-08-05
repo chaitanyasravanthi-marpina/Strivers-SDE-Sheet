@@ -1,0 +1,19 @@
+class Solution {
+public:
+    vector<int> majorityElement(vector<int>& nums) {
+        int n = nums.size();
+        unordered_map<int,int>hash;
+        vector<int>arr;
+
+        for(int num:nums){
+            hash[num]++;
+        }
+        for(auto p : hash){
+            if(p.second >n/3){
+                arr.push_back(p.first);
+            }
+        }
+        return arr;
+        
+    }
+};
